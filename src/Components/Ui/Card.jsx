@@ -14,12 +14,20 @@ const Card = ({ card, selectedCard, setSelectedCard }) => {
     }
   };
 
+  const tagColors = {
+    Popular: 'badge-primary',
+    New: 'badge-success',
+    'Best Seller': 'badge-warning',
+  };
+
   return (
     <div className="card bg-base-100 shadow-sm p-10 mt-10 w-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border hover:border-purple-400 cursor-pointer">
       <div className="card-body">
         <div className="flex justify-between">
           <img src={card.icon} alt="" />
-          <span className="badge badge-xs badge-warning">{card.tag}</span>
+          <span className={`badge badge-xs p-3 font-semibold text-white ${tagColors[card.tag] || 'badge-neutral'}`}>
+            {card.tag}
+          </span>
         </div>
 
         <h2 className="text-3xl font-bold">{card.name}</h2>

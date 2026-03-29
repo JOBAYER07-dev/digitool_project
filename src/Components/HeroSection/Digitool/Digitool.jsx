@@ -9,7 +9,14 @@ const Digitool = ({ cardsPromise, selectedCard, setSelectedCard }) => {
   const [selectedTab, setSelectedTab] = useState('products');
    
   return (
-    <div className="container mx-auto mt-4 ">
+    <div className="container mx-auto my-10 ">
+      <div className='mb-6  space-y-5'>
+        <h2 className='text-center text-4xl font-bold'>Premium Digital Tools</h2>
+        <p  className='text-center text-gray-500'>
+          Choose from our curated collection of premium digital products
+          designed <br /> to boost your productivity and creativity.
+        </p>
+      </div>
       <div className="flex justify-center items-center gap-3 ">
         <button
           onClick={() => setSelectedTab('products')}
@@ -34,10 +41,9 @@ const Digitool = ({ cardsPromise, selectedCard, setSelectedCard }) => {
             setSelectedCard={setSelectedCard}
           />
         )}
-        {selectedTab === 'cart' && <Cart
-          selectedCard={selectedCard}
-          setSelectedCard={setSelectedCard}
-        />}
+        {selectedTab === 'cart' && (
+          <Cart selectedCard={selectedCard} setSelectedCard={setSelectedCard} />
+        )}
       </div>
     </div>
   );
