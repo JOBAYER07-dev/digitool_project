@@ -1,7 +1,13 @@
 import React from 'react';
 import { MdDelete } from 'react-icons/md';
+import { toast } from 'react-toastify';
 
-const Cart = ({ selectedCard }) => {
+const Cart = ({ selectedCard, setSelectedCard }) => {
+  const deleteFromCart = (id) => {
+    setSelectedCard(selectedCard.filter(item => item.id !== id));
+    toast.error(`Product removed from cart!`);
+  }
+
   return (
     <div className="container mx-auto mt-10">
       {selectedCard.length === 0 ? (
@@ -32,7 +38,9 @@ const Cart = ({ selectedCard }) => {
                 <p className="font-semibold">{card.price}</p>
               </div>
             </div>
-            <button className="btn btn-primary">
+            <button
+            onClick={()=>deleteFromCart(card.id)}
+              className="btn btn-primary">
 
               <MdDelete />
             </button>

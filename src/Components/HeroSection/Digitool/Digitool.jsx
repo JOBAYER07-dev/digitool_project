@@ -34,7 +34,10 @@ const Digitool = ({ cardsPromise }) => {
             setSelectedCard={setSelectedCard}
           />
         )}
-        {selectedTab === 'cart' && <Cart selectedCard={selectedCard} />}
+        {selectedTab === 'cart' && <Cart
+          selectedCard={selectedCard}
+          setSelectedCard={setSelectedCard}
+        />}
       </div>
     </div>
   );
