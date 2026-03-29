@@ -2,12 +2,12 @@ import React, { use, useState } from 'react';
 import CreateCards from '../CreateCards/CreateCards';
 import Cart from '../Cart/Cart';
 
-const Digitool = ({ cardsPromise }) => {
+const Digitool = ({ cardsPromise, selectedCard, setSelectedCard }) => {
   const cards = use(cardsPromise);
   console.log(cards);
 
   const [selectedTab, setSelectedTab] = useState('products');
-  const [selectedCard, setSelectedCard]= useState([]);
+   
   return (
     <div className="container mx-auto mt-4 ">
       <div className="flex justify-center items-center gap-3 ">

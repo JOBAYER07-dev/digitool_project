@@ -25,7 +25,7 @@ const Card = ({ card, selectedCard, setSelectedCard }) => {
         <h2 className="text-3xl font-bold">{card.name}</h2>
         <h4 className="text-gray-500">{card.description}</h4>
         <span className="text-xl">
-          {card.price}/{card.period}
+          ${card.price}/{card.period}
         </span>
 
         <ul className="mt-6 flex flex-col gap-2 text-xs">

@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Digitool from './Components/HeroSection/Digitool/Digitool';
@@ -10,20 +10,26 @@ const fetchCards = async () => {
   return response.json();
 }
 
+const cardsPromise = fetchCards();
+
 function App() {
-  const cardsPromise = fetchCards();
+ const [selectedCard, setSelectedCard] = useState([]);
 
   return (
     <>
-      <Navbar />
+      <Navbar selectedCard={selectedCard} />
 
       <Suspense
         fallback={<span className="loading loading-infinity loading-xl"></span>}
       >
-        <Digitool cardsPromise={cardsPromise} />
+        <Digitool
+          cardsPromise={cardsPromise}
+          selectedCard={selectedCard}
+          setSelectedCard={setSelectedCard}
+        />
       </Suspense>
 
-      <ToastContainer/>
+      <ToastContainer />
     </>
   );
 }

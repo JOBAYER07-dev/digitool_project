@@ -3,7 +3,19 @@ import { MdDelete } from 'react-icons/md';
 import { toast } from 'react-toastify';
 
 const Cart = ({ selectedCard, setSelectedCard }) => {
+ const calculateTotal = selectedCard.reduce(
+   (total, card) => total + card.price,
+   0,
+  );
+  
+  const removeAllFromCart = () => {
+
+    setSelectedCard([]);
+    toast.info(`All products removed from cart!`);
+  }
+  
   const deleteFromCart = (id) => {
+
     setSelectedCard(selectedCard.filter(item => item.id !== id));
     toast.error(`Product removed from cart!`);
   }
@@ -35,18 +47,31 @@ const Cart = ({ selectedCard, setSelectedCard }) => {
                 <h2 className="flex items-center gap-2 font-bold text-xl">
                   {card.name}
                 </h2>
-                <p className="font-semibold">{card.price}</p>
+                <p className="font-semibold">${card.price}</p>
               </div>
             </div>
             <button
-            onClick={()=>deleteFromCart(card.id)}
-              className="btn btn-primary">
-
+              onClick={() => deleteFromCart(card.id)}
+              className="btn btn-primary"
+            >
               <MdDelete />
             </button>
           </div>
         ))
       )}
+
+      <div className="flex justify-between ">
+        <h2 className="font-bold text-gray-500">TOTAL</h2>
+        <h2 className="font-bold text-2xl">${calculateTotal.toFixed(2)}</h2>
+      </div>
+
+      <div className='flex justify-center items-center'>
+        <button
+          onClick={removeAllFromCart}
+          className="btn btn-primary w-[800px] mt-5 rounded-3xl">
+          PROCEED TO CHECKOUT
+        </button>
+      </div>
     </div>
   );
 };
