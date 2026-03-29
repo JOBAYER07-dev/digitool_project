@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 import './App.css'
 import Navbar from './Components/Navbar/Navbar'
 import Digitool from './Components/HeroSection/Digitool/Digitool';
+import { ToastContainer } from 'react-toastify';
+
 
 const fetchCards = async () => {
   const response = await fetch('/data.json');
@@ -20,6 +22,8 @@ function App() {
       >
         <Digitool cardsPromise={cardsPromise} />
       </Suspense>
+
+      <ToastContainer/>
     </>
   );
 }
