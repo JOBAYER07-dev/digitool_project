@@ -35,7 +35,9 @@ const Cart = ({ selectedCard, setSelectedCard }) => {
         selectedCard.map((card, index) => (
           <div
             key={index}
-            className="flex justify-between items-center gap-6 p-5 rounded-2xl border mb-5"
+            className="flex justify-between items-center gap-6 p-5 rounded-2xl border mb-5
+            transition-all duration-300 hover:-translate-y-2 hover:shadow-xl
+            "
           >
             <div className="flex items-center gap-8">
               <img
@@ -60,15 +62,16 @@ const Cart = ({ selectedCard, setSelectedCard }) => {
         ))
       )}
 
-      <div className="flex justify-between ">
+      <div className="flex justify-between mx-5 md:mx-0">
         <h2 className="font-bold text-gray-500">TOTAL</h2>
         <h2 className="font-bold text-2xl">${calculateTotal.toFixed(2)}</h2>
       </div>
 
-      <div className='flex justify-center items-center'>
+      <div className="flex justify-center items-center">
         <button
           onClick={removeAllFromCart}
-          className="btn btn-primary w-[800px] mt-5 rounded-3xl">
+          className="btn btn-primary w-[800px] mt-5 rounded-3xl"
+        >
           PROCEED TO CHECKOUT
         </button>
       </div>

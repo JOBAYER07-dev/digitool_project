@@ -1,16 +1,20 @@
-# React + Vite
+-->>> Name of My Project?
+ANS: Digital Tools marcketplace.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-->>> A little Description.
+ANS: DigiTool is a digital marketplace built with React & Tailwind CSS. Users can explore 200+ premium tools like AI Writing Pro, Design Templates, Resume Builder, and more — with cart functionality, pricing plans, and a clean responsive UI.
 
-Currently, two official plugins are available:
+--->>> Technology that I use.
+ANS: >> UI Framework: React. 
+     >> Styling: Tailwind CSS.
+     >> UI components: Daisy UI.
+     >> Noitfication: React Tostify.
+     >> Icons: React Icons.
+     >> Deployment: Netlify.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+--->>> 3 Features about My project.
+ANS: >>Browse & Cart Management —> Add or remove digital tools         from cart anytime with real-time price updates.
 
-## React Compiler
+     >>Persistent Cart State —> Cart stays intact while switching between Products and Cart tabs.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+     >>Toast Notifications —> Instant feedback on every cart action (add, remove, checkout).

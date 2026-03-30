@@ -1,11 +1,13 @@
 import React from 'react';
+import { FaFacebookF, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   return (
     <footer className="footer sm:footer-horizontal bg-[#101727] text-white p-20">
       <aside>
-        <h2 className='font-bold text-4xl'>DIGITOOL</h2>
-        <p className='text-gray-400 font-semibold'>
+        <h2 className="font-bold text-4xl">DIGITOOL</h2>
+        <p className="text-gray-400 font-semibold">
           ACME Industries Ltd.
           <br />
           Providing reliable tech since 1992
@@ -30,6 +32,14 @@ const Footer = () => {
         <a className="link link-hover">Terms of use</a>
         <a className="link link-hover">Privacy policy</a>
         <a className="link link-hover">Cookie policy</a>
+      </nav>
+      <nav>
+        <h6 className="footer-title">Social Links</h6>
+        <div className='flex gap-4 text-xl'>
+          <FaFacebookF />
+          <FaInstagram />
+          <FaXTwitter />
+        </div>
       </nav>
     </footer>
   );
