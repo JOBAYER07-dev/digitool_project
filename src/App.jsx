@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify';
 import FirstHero from './Components/HeroSection/FirstHero/FirstHero';
 import RatingSection from './Components/HeroSection/RatingSection/RatingSection';
 import GetStarted from './Components/HeroSection/GetStarted/GetStarted';
+import PricingSection from './Components/HeroSection/PricingSection/PricingSection';
 
 
 const fetchCards = async () => {
@@ -15,6 +16,12 @@ const fetchCards = async () => {
 
 const cardsPromise = fetchCards();
 
+const fetchPricing = async () => {
+  const res = await fetch('/pricingData.json');
+  return res.json();
+}
+const pricingPromise = fetchPricing();
+
 function App() {
  const [selectedCard, setSelectedCard] = useState([]);
 
@@ -22,7 +29,7 @@ function App() {
     <>
       <Navbar selectedCard={selectedCard} />
       <FirstHero />
-      <RatingSection/>
+      <RatingSection />
 
       <Suspense
         fallback={<span className="loading loading-infinity loading-xl"></span>}
@@ -34,7 +41,13 @@ function App() {
         />
       </Suspense>
       <GetStarted />
-      
+
+      <Suspense
+        fallback={<span className="loading loading-infinity loading-xl"></span>}
+      >
+        <PricingSection pricingPromise={pricingPromise} />
+      </Suspense>
+
       <ToastContainer />
     </>
   );

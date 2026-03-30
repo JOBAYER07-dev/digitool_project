@@ -21,11 +21,13 @@ const Card = ({ card, selectedCard, setSelectedCard }) => {
   };
 
   return (
-    <div className="card bg-base-100 shadow-sm p-10 mt-10 w-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:border hover:border-purple-400 cursor-pointer">
+    <div className="card bg-base-100 shadow-sm p-10 mt-10 w-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
       <div className="card-body">
         <div className="flex justify-between">
           <img src={card.icon} alt="" />
-          <span className={`badge badge-xs p-3 font-semibold text-white ${tagColors[card.tag] || 'badge-neutral'}`}>
+          <span
+            className={`badge badge-xs p-3 font-semibold text-white ${tagColors[card.tag] || 'badge-neutral'}`}
+          >
             {card.tag}
           </span>
         </div>
