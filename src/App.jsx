@@ -5,6 +5,7 @@ import Digitool from './Components/HeroSection/Digitool/Digitool';
 import { ToastContainer } from 'react-toastify';
 import FirstHero from './Components/HeroSection/FirstHero/FirstHero';
 import RatingSection from './Components/HeroSection/RatingSection/RatingSection';
+import GetStarted from './Components/HeroSection/GetStarted/GetStarted';
 
 
 const fetchCards = async () => {
@@ -32,7 +33,8 @@ function App() {
           setSelectedCard={setSelectedCard}
         />
       </Suspense>
-
+      <GetStarted />
+      
       <ToastContainer />
     </>
   );

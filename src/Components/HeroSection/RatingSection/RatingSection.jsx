@@ -2,7 +2,7 @@ import React from 'react';
 
 const RatingSection = () => {
   return (
-    <div className="container mx-auto flex justify-center items-center gap-20 bg-purple-600 p-12">
+    <div className="container mx-auto flex justify-center items-center gap-10 md:gap-20 bg-purple-600 p-12">
       <div>
         <h2 className="text-3xl font-bold text-white">50K+</h2>
         <p className="text-white/70">Active Users</p>
