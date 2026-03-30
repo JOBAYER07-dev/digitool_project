@@ -7,6 +7,8 @@ import FirstHero from './Components/HeroSection/FirstHero/FirstHero';
 import RatingSection from './Components/HeroSection/RatingSection/RatingSection';
 import GetStarted from './Components/HeroSection/GetStarted/GetStarted';
 import PricingSection from './Components/HeroSection/PricingSection/PricingSection';
+import WorkFlow from './Components/HeroSection/WorkFlow/WorkFlow';
+import Footer from './Components/Footer/Footer';
 
 
 const fetchCards = async () => {
@@ -47,6 +49,10 @@ function App() {
       >
         <PricingSection pricingPromise={pricingPromise} />
       </Suspense>
+
+      <WorkFlow />
+      
+      <Footer/>
 
       <ToastContainer />
     </>
