@@ -27,7 +27,7 @@ const Cart = ({ selectedCard, setSelectedCard }) => {
           <h2 className="font-semibold text-xl text-gray-500">
             Your cart is empty!
           </h2>
-          <p className="font-semibold">
+          <p className="font-semibold text-center">
             Please add some products to your cart before proceeding to checkout.
           </p>
         </div>
